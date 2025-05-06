@@ -30,7 +30,7 @@ const TransactionList = () => {
         padding: '20px',
         border: '1px solid #ccc',
         borderRadius: '5px',
-        width: '500px',
+        width: '35vh',
       };
 
     const grouped = transactions.reduce((acc, transaction) => {
