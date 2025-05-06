@@ -11,7 +11,7 @@ const Summary = () => {
         padding: '20px',
         border: '1px solid #ccc',
         borderRadius: '5px',
-        width: '300px',
+        width: '500px',
     };
 
     const totalIncome = transactions
