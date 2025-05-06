@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/quantro-finance-dashboard/static/css/main.68f151ff.css",
-    "main.js": "/quantro-finance-dashboard/static/js/main.46099256.js",
+    "main.js": "/quantro-finance-dashboard/static/js/main.f755f84e.js",
     "index.html": "/quantro-finance-dashboard/index.html",
     "main.68f151ff.css.map": "/quantro-finance-dashboard/static/css/main.68f151ff.css.map",
-    "main.46099256.js.map": "/quantro-finance-dashboard/static/js/main.46099256.js.map"
+    "main.f755f84e.js.map": "/quantro-finance-dashboard/static/js/main.f755f84e.js.map"
   },
   "entrypoints": [
     "static/css/main.68f151ff.css",
-    "static/js/main.46099256.js"
+    "static/js/main.f755f84e.js"
   ]
 }
