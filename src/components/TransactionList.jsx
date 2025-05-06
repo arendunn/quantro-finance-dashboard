@@ -6,13 +6,12 @@ const TransactionList = () => {
     
     const formStyle = {
         display: 'flex',
-        alignItems: 'start',
-        justifyContent: 'start',
         flexDirection: 'column',
+        alignItems: 'start',
         padding: '20px',
         border: '1px solid #ccc',
         borderRadius: '5px',
-        width: '500px',
+        width: '300px',
       };
 
     const grouped = transactions.reduce((acc, transaction) => {
@@ -30,14 +29,14 @@ const TransactionList = () => {
         <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
             <div style={formStyle}>
                 <span style={{ width: '100%', textAlign: 'center'}}>
-                    <h3>Transaction List:</h3>
+                    <h2>Transaction List</h2>
                 </span>
                 {sortedDates.map(date => (
                     <div key={date}>
-                    <h4 style={{paddingRight: '400px'}}>{date}</h4>
+                    <h3 style={{paddingRight: '20vh'}}>{date}</h3>
                     <ul>
                         {grouped[date].map(tx => (
-                        <li key={tx.id} style={{ display: 'flex', justifyContent:'space-between', listStyleType: 'none' }}>
+                        <li key={tx.id} style={{ width: '100%', display: 'flex', justifyContent:'space-between', listStyleType: 'none' }}>
                             <span>{tx.description}</span>
                             <span>
                                 {tx.transactionType === 'income' ? '+' : '-'}${tx.amount.toFixed(2)}
