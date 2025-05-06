@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FinanceContext } from '../context/FinanceContext';
+import { v4 as uuidv4 } from 'uuid';
 
 const TransactionForm = () => {
   const { addTransaction } = useContext(FinanceContext);
@@ -11,7 +12,13 @@ const TransactionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (transactionType && transactionDate && description && amount) {
-      addTransaction({ transactionType, transactionDate, description, amount: parseFloat(amount) });
+      addTransaction({
+        id: uuidv4(),
+        transactionType,
+        transactionDate,
+        description,
+        amount: parseFloat(amount)
+      });
       setTransactionType('');
       setTransactionDate('');
       setDescription('');

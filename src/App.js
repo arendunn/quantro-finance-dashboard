@@ -3,6 +3,7 @@ import { FinanceProvider } from './context/FinanceContext';
 import TransactionForm from './components/TransactionForm';
 import TransactionList from './components/TransactionList';
 import Summary from './components/Summary';
+import Charts from './components/Charts';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <TransactionForm/>
         <TransactionList/>
         <Summary/>
+        <Charts/>
       </div>
       <footer style={{ marginTop: '20px', textAlign: 'center' }}>
         <p> &copy; 2023 Quantro. All rights reserved.</p>

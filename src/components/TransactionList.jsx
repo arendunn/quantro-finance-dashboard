@@ -3,6 +3,7 @@ import { FinanceContext } from "../context/FinanceContext";
 
 const TransactionList = () => {
     const { transactions } = useContext(FinanceContext);
+    const { removeTransaction } = useContext(FinanceContext);
     
     const formStyle = {
         display: 'flex',
@@ -41,6 +42,7 @@ const TransactionList = () => {
                             <span>
                                 {tx.transactionType === 'income' ? '+' : '-'}${tx.amount.toFixed(2)}
                             </span>
+                            <button onClick={() => removeTransaction(tx.id)} style={{ color: 'red', backgroundColor: 'white', border: 'none', cursor: 'pointer' }}>X</button>
                         </li>
                         ))}
                     </ul>
