@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/quantro-finance-dashboard/static/css/main.31d6cfe0.css",
+    "main.js": "/quantro-finance-dashboard/static/js/main.8390a751.js",
+    "index.html": "/quantro-finance-dashboard/index.html",
+    "main.8390a751.js.map": "/quantro-finance-dashboard/static/js/main.8390a751.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.8390a751.js"
+  ]
+}
