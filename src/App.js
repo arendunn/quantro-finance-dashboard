@@ -7,7 +7,7 @@ import Summary from './components/Summary';
 const App = () => {
   return (
     <FinanceProvider>
-      <div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <h1>Quantro Finance Dashboard</h1>
         <TransactionForm/>
         <TransactionList/>

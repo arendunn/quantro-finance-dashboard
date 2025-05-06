@@ -22,16 +22,16 @@ const TransactionForm = () => {
   const formStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'start',
+    padding: '20px',
     border: '1px solid #ccc',
     borderRadius: '5px',
-    width: '300px',
   };
 
   return (
     <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
       <form onSubmit={handleSubmit} style={formStyle}>
-        <h2>Add Transactions:</h2>
+        <h3>Add Transactions:</h3>
         <div className="transaction-type">
           <h4>Select Transaction Type:</h4>
           <input
@@ -65,7 +65,7 @@ const TransactionForm = () => {
         <h4>Enter Amount: </h4>
         <span>$
           <input
-            type="currency"
+            type="number"
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
