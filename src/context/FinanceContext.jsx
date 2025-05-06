@@ -5,6 +5,7 @@ export const FinanceContext = createContext();
 
 export const FinanceProvider = ({ children }) => {
     const [transactions, setTransactions] = useState([]);
+    const [assets, setAssets] = useState([]);
 
     // Fetch transactions from loalStorage on initial render
     useEffect(() => {
@@ -27,8 +28,29 @@ export const FinanceProvider = ({ children }) => {
         setTransactions((prevTransactions) => prevTransactions.filter(transaction => transaction.id !== id));
     };
 
+    // Fetch assets from localStorage on initial render
+    useEffect(() => {
+        const storedAssets = JSON.parse(localStorage.getItem('assets')) || [];
+        setAssets(storedAssets);
+    }, []);
+
+    // Save assets to localStorage whenever they change
+    useEffect(() => {
+        localStorage.setItem('assets', JSON.stringify(assets));
+    }, [assets]);
+
+    // Add assets function
+    const addAssets = (assets) => {
+        setAssets((prevAssets) => [...prevAssets, assets]);
+    };
+
+    // Remove assets function
+    const removeAssets = (id) => {
+        setAssets((prevAssets) => prevAssets.filter(asset => asset.id !== id));
+    };
+
     return (
-        <FinanceContext.Provider value={{ transactions, addTransaction, removeTransaction }}>
+        <FinanceContext.Provider value={{ transactions, addTransaction, removeTransaction, assets, addAssets, removeAssets }}>
             {children}
         </FinanceContext.Provider>
     );
