@@ -8,7 +8,7 @@ const App = () => {
   return (
     <FinanceProvider>
       <div>
-        <h1>QUANTRO</h1>
+        <h1>Quantro Finance Dashboard</h1>
         <TransactionForm/>
         <TransactionList/>
         <Summary/>

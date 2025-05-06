@@ -10,7 +10,9 @@ const TransactionList = () => {
         <ul>
             {transactions.map((transaction) => (
             <li key={transaction.id}>
-                {transaction.description} - ${transaction.amount}
+                {transaction.transactionDate} | {transaction.description}
+                {transaction.transactionType === "income" ? " +" : " -"}
+                ${transaction.amount}
             </li>
             ))}
         </ul>
