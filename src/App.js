@@ -14,6 +14,9 @@ const App = () => {
         <TransactionList/>
         <Summary/>
       </div>
+      <footer style={{ marginTop: '20px', textAlign: 'center' }}>
+        <p> &copy; 2023 Quantro. All rights reserved.</p>
+      </footer>
     </FinanceProvider>
   )
 }

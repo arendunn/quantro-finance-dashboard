@@ -22,18 +22,19 @@ const TransactionForm = () => {
   const formStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'start',
+    alignItems: 'center',
     padding: '20px',
     border: '1px solid #ccc',
     borderRadius: '5px',
+    width: '300px',
   };
 
   return (
     <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
       <form onSubmit={handleSubmit} style={formStyle}>
-        <h3>Add Transactions:</h3>
+        <h2>Add Transactions</h2>
         <div className="transaction-type">
-          <h4>Select Transaction Type:</h4>
+          <h3>Select Transaction Type:</h3>
           <input
             type="radio"
             value="income"
@@ -47,14 +48,14 @@ const TransactionForm = () => {
             onChange={(e) => setTransactionType(e.target.value)}
           /> Expense
         </div>
-        <h4>Select Transaction Date: </h4>
+        <h3>Select Transaction Date: </h3>
           <input
             type="date"
             value={transactionDate}
             onChange={(e) => setTransactionDate(e.target.value)}
             required
           />
-        <h4>Enter Description: </h4>
+        <h3>Enter Description: </h3>
         <input
           type="text"
           placeholder="Coffee, Rent, etc."
@@ -62,7 +63,7 @@ const TransactionForm = () => {
           onChange={(e) => setDescription(e.target.value)}
           required
         />
-        <h4>Enter Amount: </h4>
+        <h3>Enter Amount: </h3>
         <span>$
           <input
             type="number"
