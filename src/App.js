@@ -8,7 +8,8 @@ const App = () => {
   return (
     <FinanceProvider>
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <h1>Quantro Finance Dashboard</h1>
+        <h1>Quantro</h1>
+        <h2>Personal Finance Dashboard</h2>
         <TransactionForm/>
         <TransactionList/>
         <Summary/>
