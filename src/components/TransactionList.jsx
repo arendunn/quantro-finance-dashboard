@@ -52,37 +52,37 @@ const TransactionList = () => {
                     <h2>Transaction List</h2>
                     {sortedDates.map(date => (
                         <div key={date}>
-                        <h3 style={{paddingRight: '50vh'}}>{date}</h3>
-                        <ul>
-                            {grouped[date].map(tx => (
-                                <li key={tx.id} style={{ width: '100%', display: 'flex', justifyContent:'space-between', listStyleType: 'none' }}>
-                                    <span>
-                                        <input
-                                            type="checkbox"
-                                            checked={selected.includes(tx.id)}
-                                            onChange={() => toggleSelect(tx.id)}
-                                        />
-                                        {tx.description}
-                                    </span>
-                                    <span>
-                                        {tx.transactionType === 'income'
-                                        ? `+ $${tx.amount.toFixed(2)}`
-                                        : `- $${tx.amount.toFixed(2)}`
-                                        }
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
-                        <div style={{ width: '100%', display: 'flex', justifyContent:'end'}}>
-                            <h4>
-                                {(() => {
-                                const total = grouped[date]
-                                    .reduce((acc, tx) => tx.transactionType === 'income' ? acc + tx.amount : acc - tx.amount, 0);
-                                return `${total < 0 ? '- $' : '$'}${Math.abs(total).toFixed(2)}`;
-                                })()}
-                            </h4>
+                            <h3 style={{paddingRight: '50vh'}}>{date}</h3>
+                            <ul>
+                                {grouped[date].map(tx => (
+                                    <li key={tx.id} style={{ width: '100%', display: 'flex', justifyContent:'space-between', listStyleType: 'none' }}>
+                                        <span>
+                                            <input
+                                                type="checkbox"
+                                                checked={selected.includes(tx.id)}
+                                                onChange={() => toggleSelect(tx.id)}
+                                            />
+                                            {tx.description}
+                                        </span>
+                                        <span>
+                                            {tx.transactionType === 'income'
+                                            ? `+ $${tx.amount.toFixed(2)}`
+                                            : `- $${tx.amount.toFixed(2)}`
+                                            }
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div style={{ width: '100%', display: 'flex', justifyContent:'end'}}>
+                                <h4>
+                                    {(() => {
+                                    const total = grouped[date]
+                                        .reduce((acc, tx) => tx.transactionType === 'income' ? acc + tx.amount : acc - tx.amount, 0);
+                                    return `${total < 0 ? '- $' : '$'}${Math.abs(total).toFixed(2)}`;
+                                    })()}
+                                </h4>
+                            </div>
                         </div>
-                    </div>
                     ))}
                     {transactions.length === 0 && (
                         <p>No transactions available.</p>
